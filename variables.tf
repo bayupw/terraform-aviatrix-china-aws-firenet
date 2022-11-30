@@ -11,6 +11,12 @@ variable "aliyun_region" {
   default     = "acs-cn-shanghai (Shanghai)"
 }
 
+variable "alicloud_region" {
+  description = "Alibaba Cloud region"
+  type        = string
+  default     = "cn-shanghai"
+}
+
 variable "aws_account" {
   description = "AWS access account in Aviatrix"
   type        = string
@@ -68,11 +74,25 @@ variable "firewall_image_id" {
 variable "firewall_user" {
   description = "Firewall username for vendor integration."
   type        = string
+  default     = "admin"
 }
 
 variable "firewall_password" {
   description = "Firewall password for vendor integration."
   type        = string
+  default     = "Aviatrix123#"
+}
+
+variable "create_ecs" {
+  description = "Enable east-west inspection"
+  type        = bool
+  default     = true
+}
+
+variable "ecs_password" {
+  description = "ECS instance password."
+  type        = string
+  default     = "Aviatrix123#"
 }
 
 variable "inspection_enabled" {
@@ -84,7 +104,7 @@ variable "inspection_enabled" {
 variable "egress_enabled" {
   description = "Enable egress inspection"
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "keep_alive_via_lan_interface_enabled" {

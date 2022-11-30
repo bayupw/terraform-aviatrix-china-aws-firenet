@@ -58,7 +58,7 @@ resource "aviatrix_transit_firenet_policy" "aliyun_spoke2_firenet_policy" {
 
 # wait for after firewall instance is launched, before running vendor integration
 resource "time_sleep" "wait_fw_instance" {
-  create_duration = "10m"
+  create_duration = "15m"
   depends_on      = [aviatrix_firewall_instance.firewall_instance_1]
 }
 

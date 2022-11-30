@@ -10,6 +10,7 @@ module "aws_transit_firenet" {
   ha_gw                  = var.ha_gw
   instance_size          = "c5.xlarge"
   enable_transit_firenet = true
+  single_az_ha           = false
 }
 
 module "pan_s3_bootstrap" {
